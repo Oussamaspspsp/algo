@@ -1,0 +1,29 @@
+// var str = "And the ocean here."
+// var CHAR= " "
+
+ALGORITHM calculateinsentence
+VAR
+    i, N_vowels:INTEGER=0;
+    N_words:INTEGER=0;
+    str:STRING;
+
+BEGIN
+    Write("and the ocean here.")
+    read(str)
+
+    WHILE (str[i]<>".") DO
+        IF (str[i]=" ") THEN
+            N_words:= N_words+1
+        END_IF
+        IF (str[i]="a" OR str[i]="e" OR str[i]="i" OR str[i]="o" OR str[i]="u" OR str[i]="y") THEN
+            N_vowels:= N_vowels+1
+        END_IF   
+       
+        i:=i+1
+    END_WHILE
+write("the number of words is:", N_words+1)
+write("the number of vowels is:", N_vowels)
+write("the length of str is",i+1)
+
+
+END
