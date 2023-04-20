@@ -1,0 +1,41 @@
+ALGORITHM array_sum
+VAR
+    set1 : ARRAY_OF INTEGER[n1];
+    set2 : ARRAY_OF INTEGER[n2];    //set2 = [2, 4, 1, 9, 3]    
+    set: ARRAY_OF INTEGER[n1+n2];
+    i,j:INTEGER = 0;
+    sum_commun, sum_distinct: INTEGER:=0;
+BEGIN
+    write("type the length of set1")
+    read(n1)
+    write("type the length of set2")
+    read(n1)
+    FOR i FROM 0 TO n1-1 STEP step  DO
+            read(set1[i])
+    END_FOR
+    FOR i FROM 0 TO n2-1 STEP step  DO
+            read(set2[j])
+    END_FOR
+
+    set:= concat(set1, set2)
+
+    FOR k FROM 0 TO set.length-1 STEP step  DO
+        found:=false
+        FOR L FROM 0 TO set.length-1 STEP step  DO
+            IF (set[k]=set[L] AND k<>L) THEN
+                found:=true
+                sum_commun=sum_commun+set[k]
+            END_IF
+        END_FOR
+        IF (set[k]=set[L] AND k<>L) THEN
+            found:=true
+            sum_distinct=sum_distinct+set[k]
+        END_IF
+
+    END_FOR
+
+    write("The sum of distinct is:", sum_distinct)
+    write("The sum of commun is:", sum_commun)
+
+
+END
