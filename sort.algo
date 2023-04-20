@@ -1,0 +1,25 @@
+ALGORITHM insertionSort(arr, n)
+VAR
+    // Initialize the array to be sorted
+    array = [5, 2, 4, 6, 1, 3]
+    i,j,n:INTEGER =0;
+
+BEGIN
+            // Iterate over each element in the array
+    FOR i = 1 TO n-1 STEP step DO:
+            // Pick the current element to insert into the sorted portion
+        current = array[i]
+            // Iterate over the sorted portion of the array in reverse order
+        FOR j = i-1 TO 0 STEP step DO:
+            // If the current element is smaller than the sorted element, shift the sorted element to the right
+            IF (array[j] > current) THEN
+                array[j+1] = array[j]
+            // Otherwise, insert the current element to the right of the sorted element
+            ELSE:
+                array[j+1] = current
+            // Break out of the inner loop since the current element has been inserted
+                Break
+
+// Print the sorted array
+print(array)
+END
