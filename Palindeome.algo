@@ -1,23 +1,22 @@
-ALGORITHM palindrome
-VAR
-    word: STRING := "racecar" // or any other string you want to test
-    isPalindrome: BOOLEAN := true
-    length: INTEGER := length of word
-    i: INTEGER := 0
-BEGIN
-    IF (length <= 1:) THEN
-        //An empty word or a word containing a single character is a palindrome.
-        isPalindrome := true
-        ELSE
-        WHILE (i < length / 2:) DO
-            if word[i] != word[length-i-1]:
-            // If characters from the ends don't match, the word is not a palindrome.
-            isPalindrome := false
-            break
-        i := i + 1
+const word = "racecar";
+let isPalindrome = true;
+const length = word.length;
+let i = 0;
 
-    IF isPalindrome:
-    print(word + " is a palindrome")
-    else:
-    print(word + " is not a palindrome")
-END
+if (length <= 1) {
+  isPalindrome = true;
+} else {
+  while (i < length / 2) {
+    if (word[i] !== word[length - i - 1]) {
+      isPalindrome = false;
+      break;
+    }
+    i++;
+  }
+}
+
+if (isPalindrome) {
+  console.log(word + " is a palindrome");
+} else {
+  console.log(word + " is not a palindrome");
+}
